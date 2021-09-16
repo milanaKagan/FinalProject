@@ -1134,16 +1134,16 @@ ALTER TABLE public.users ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 --
 
 COPY public.airlines (id, name, country_id, user_id) FROM stdin;
-1	Private flight	216	1
-2	135 Airways	236	2
-3	1Time Airline	78	3
-4	2 Sqn No 1 Elementary Flying Training School	26	4
-5	213 Flight Unit	194	5
-6	223 Flight Unit State Airline	224	6
-7	224th Flight Unit	120	7
-8	247 Jet Ltd	149	8
-9	3D Aviation	32	9
-10	40-Mile Air	170	10
+1	Private flight	73	1
+2	135 Airways	69	2
+3	1Time Airline	237	3
+4	2 Sqn No 1 Elementary Flying Training School	181	4
+5	213 Flight Unit	17	5
+6	223 Flight Unit State Airline	173	6
+7	224th Flight Unit	42	7
+8	247 Jet Ltd	35	8
+9	3D Aviation	79	9
+10	40-Mile Air	164	10
 \.
 
 
@@ -1403,16 +1403,16 @@ COPY public.countries (id, name) FROM stdin;
 --
 
 COPY public.customers (id, first_name, last_name, address, phone_no, credit_card_no, user_id) FROM stdin;
-1	Christof	Colin	Switzerland, Effingen, Boulevard de Balmont 2950	075 114 99 31	372349619384358	1
-2	Gonca	Yalçın	Turkey, Muş, Kushimoto Sk 654	(757)-075-3825	343351273105141	2
-3	بهار	حیدری	Iran, بروجرد, دکتر چمران 198	004-21666423	342205557521913	3
-4	Nancy	Gerner	Germany, Schleswig-Flensburg, Lindenweg 8439	0797-2994953	347720284161424	4
-5	Fatima	Navarro	Spain, Torrente, Paseo de Extremadura 9628	979-830-951	371834231175731	5
-6	ثنا	حیدری	Iran, کاشان, میدان ولیعصر (عج) 2976	060-72322660	341173697070608	6
-7	Justine	Ross	Canada, Waterloo, Balmoral St 718	829-841-9667	346981798920694	7
-8	Gene	Adams	United States, Grants Pass, Saddle Dr 1789	(537)-992-7918	372508561638612	8
-9	Elias	Rantanen	Finland, Lohja, Bulevardi 2583	09-028-721	347427545072446	9
-10	Kåre	Kvernberg	Norway, Kiberg, Sandåsveien 4042	22724823	378108784480951	10
+1	Alcibíades	Aragão	Brazil, Igarassu, Rua São Luiz  8120	(11) 7477-3905	372349619384358	1
+2	James	Hughes	New Zealand, Blenheim, Anzac Parade 7243	(066)-958-2168	343351273105141	2
+3	محمدعلی	حسینی	Iran, همدان, میدان شهدا 1246	056-21723768	342205557521913	3
+4	Adrian	Lawrence	United States, Moreno Valley, College St 1498	(330)-160-2953	347720284161424	4
+5	Edwin	King	Ireland, Bray, Church Road 5407	071-716-6770	371834231175731	5
+6	پوریا	محمدخان	Iran, اهواز, پارک شریعتی 4861	082-74678030	341173697070608	6
+7	Phillip	Stoiber	Germany, Thum, Birkenweg 3283	0386-7406623	346981798920694	7
+8	Rose	Clark	United Kingdom, Belfast, Stanley Road 4408	019467 61364	372508561638612	8
+9	Purificacion	Castillo	Spain, Cartagena, Avenida del Planetario 7168	954-294-072	347427545072446	9
+10	Maitê	Cardoso	Brazil, Caraguatatuba, Rua Dom Pedro Ii  711	(92) 3843-7819	378108784480951	10
 \.
 
 
@@ -1421,29 +1421,25 @@ COPY public.customers (id, first_name, last_name, address, phone_no, credit_card
 --
 
 COPY public.flights (id, airline_id, origin_country_id, destination_country_id, departure_time, landing_time, remaining_tickets) FROM stdin;
-1	1	113	102	2021-01-15 00:00:00	2021-07-14 00:00:00	190
-2	1	199	22	2021-09-02 00:00:00	2021-05-09 00:00:00	181
-3	1	238	105	2021-05-10 00:00:00	2021-03-28 00:00:00	146
-4	2	7	210	2021-03-23 00:00:00	2021-08-16 00:00:00	4
-5	2	15	239	2021-03-23 00:00:00	2021-04-16 00:00:00	120
-6	2	178	39	2021-06-16 00:00:00	2021-02-19 00:00:00	175
-7	3	98	114	2021-12-28 00:00:00	2021-12-21 00:00:00	7
-8	3	65	38	2021-04-17 00:00:00	2021-07-22 00:00:00	59
-9	4	89	78	2021-06-17 00:00:00	2021-03-10 00:00:00	119
-10	4	229	39	2021-09-16 00:00:00	2021-02-08 00:00:00	55
-11	5	130	76	2021-07-09 00:00:00	2021-08-08 00:00:00	54
-12	5	91	228	2021-08-12 00:00:00	2021-10-17 00:00:00	80
-13	5	24	5	2021-11-09 00:00:00	2021-05-15 00:00:00	11
-14	6	109	193	2021-08-02 00:00:00	2021-08-08 00:00:00	137
-15	6	27	99	2021-06-28 00:00:00	2021-06-24 00:00:00	198
-16	7	6	181	2021-09-28 00:00:00	2021-08-03 00:00:00	178
-17	8	168	194	2021-08-22 00:00:00	2021-05-09 00:00:00	111
-18	8	90	131	2021-11-07 00:00:00	2021-07-18 00:00:00	237
-19	9	170	126	2021-02-01 00:00:00	2021-01-20 00:00:00	206
-20	9	214	202	2021-11-26 00:00:00	2021-09-12 00:00:00	122
-21	9	84	98	2021-10-28 00:00:00	2021-02-14 00:00:00	173
-22	10	54	41	2021-06-20 00:00:00	2021-08-03 00:00:00	162
-23	10	68	157	2021-08-17 00:00:00	2021-07-18 00:00:00	97
+1	1	86	147	2021-12-12 00:00:00	2021-05-09 00:00:00	148
+2	1	186	136	2021-08-05 00:00:00	2021-01-19 00:00:00	138
+3	2	101	241	2021-07-23 00:00:00	2021-08-08 00:00:00	205
+4	2	100	187	2021-04-25 00:00:00	2021-09-26 00:00:00	167
+5	3	207	175	2021-03-16 00:00:00	2021-05-11 00:00:00	204
+6	3	22	130	2021-02-04 00:00:00	2021-07-02 00:00:00	53
+7	4	157	2	2021-01-11 00:00:00	2021-01-16 00:00:00	201
+8	4	57	196	2021-09-02 00:00:00	2021-05-23 00:00:00	103
+9	5	121	100	2021-11-04 00:00:00	2021-07-07 00:00:00	84
+10	5	45	78	2021-01-15 00:00:00	2021-03-04 00:00:00	236
+11	6	190	52	2021-10-13 00:00:00	2021-07-22 00:00:00	148
+12	6	131	235	2021-06-02 00:00:00	2021-06-10 00:00:00	124
+13	7	3	93	2021-01-03 00:00:00	2021-10-17 00:00:00	119
+14	7	32	1	2021-01-22 00:00:00	2021-09-26 00:00:00	19
+15	8	67	188	2021-10-20 00:00:00	2021-09-01 00:00:00	75
+16	8	184	199	2021-06-02 00:00:00	2021-11-04 00:00:00	52
+17	9	138	83	2021-11-20 00:00:00	2021-09-12 00:00:00	159
+18	9	47	90	2021-12-14 00:00:00	2021-06-09 00:00:00	242
+19	10	202	160	2021-06-10 00:00:00	2021-01-08 00:00:00	217
 \.
 
 
@@ -1470,16 +1466,16 @@ COPY public.tickets (id, flight_id, costumer_id) FROM stdin;
 --
 
 COPY public.users (id, username, password, email, role) FROM stdin;
-1	ChristofrTX	[object Promise]	christof.colin@example.com	airline
-2	GoncawXC	[object Promise]	gonca.yalcin@example.com	admin
-3	بهارjPp	[object Promise]	bhr.hydry@example.com	customer
-4	NancyURi	[object Promise]	nancy.gerner@example.com	customer
-5	FatimauEW	[object Promise]	fatima.navarro@example.com	admin
-6	ثنا1a1	[object Promise]	thn.hydry@example.com	admin
-7	Justine0fQ	[object Promise]	justine.ross@example.com	customer
-8	GeneEhq	[object Promise]	gene.adams@example.com	admin
-9	EliaswIK	[object Promise]	elias.rantanen@example.com	customer
-10	KåreRf0	[object Promise]	kare.kvernberg@example.com	customer
+1	AlcibíadesagD	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	alcibiades.aragao@example.com	airline
+2	JamesEM6	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	james.hughes@example.com	admin
+3	محمدعلیteZ	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	mhmdaaly.hsyny@example.com	admin
+4	AdrianL2N	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	adrian.lawrence@example.com	admin
+5	EdwinaW5	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	edwin.king@example.com	customer
+6	پوریاt2w	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	pwry.mhmdkhn@example.com	airline
+7	Phillip8J2	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	phillip.stoiber@example.com	admin
+8	RoseQ0v	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	rose.clark@example.com	admin
+9	Purificacion3UE	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	purificacion.castillo@example.com	admin
+10	MaitêZu5	$2b$10$uLN8scL8LQ8jLbtwUIOULOjl4IT/qMBOa4PQe699C9FWCPzQohjRC	maite.cardoso@example.com	airline
 \.
 
 
@@ -1508,7 +1504,7 @@ SELECT pg_catalog.setval('public.customers_id_seq', 10, true);
 -- Name: flights_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.flights_id_seq', 23, true);
+SELECT pg_catalog.setval('public.flights_id_seq', 19, true);
 
 
 --
