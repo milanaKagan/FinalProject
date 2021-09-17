@@ -62,7 +62,7 @@ function get_arrival_flights(country_id) {
 
         const f = async () => {
                 if (country_id <= 0 || country_id == null) {
-                        console.log('get_arrival_flights function: country_id is invalid');
+                        console.log('get_arrival_flights function: country_id is invalid' + country_id);
                         return -1;
                 }
                 else {

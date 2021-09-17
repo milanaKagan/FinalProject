@@ -92,6 +92,42 @@ function update_country(id, name) {
         }
         return try_func(f);
 }
+function insert_airline(name, countryId, userId) {
+
+        const f = async () => {
+                if (name == '' || name == null) {
+                        console.log('insert_airline function: name is null or empty');
+                        return -1;
+                }
+                if (countryId <= 0 || countryId == null) {
+                        console.log('insert_airline function: countryId is invalid');
+                        return -1;
+                }
+                if (userId <= 0 || userId == null) {
+                        console.log('insert_airline function: userId is invalid');
+                        return -1;
+                }
+                else {
+                        const result = await raw_repo.getRawResult(`select * from sp_insert_airline('${name}',${countryId},${userId})`);
+                        return result.rows[0].sp_insert_airline;
+                }
+        }
+        return try_func(f);
+}
+function delete_airline_flights(id) {
+
+        const f = async () => {
+                if (id <= 0 || id == null) {
+                        console.log('delete_airline_flights function: id is invalid');
+                        return -1;
+                }
+                else {
+                        const result = await raw_repo.getRawResult(`select * from sp_delete_airline_flights(${id})`);
+                        return result.rows[0].sp_delete_airline_flights;
+                }
+        }
+        return try_func(f);
+}
 module.exports = {
         delete_country_flights,
         delete_customers_user,
@@ -99,5 +135,7 @@ module.exports = {
         get_all_tickets,
         get_all_users,
         insert_country,
-        update_country
+        update_country,
+        insert_airline,
+        delete_airline_flights
 }
