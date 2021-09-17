@@ -19,6 +19,14 @@ const handleErrors = (err) => {
     if (err.message === 'incorrect password') {
         errors ={ password : 'That password is incorrect'}
     }
+    // incorrect password
+    if (err.message === 'password less than 6 chars') {
+        errors ={ password : 'Password less than 6 chars'}
+    }
+     // incorrect password
+     if (err.message === 'incorrect email format') {
+        errors ={ email : 'That email has incorrect format'}
+    }
     if
     (err.code === '42601' && err.message.includes('unique_email')) {
         errors ={ email : 'that email is already registered'}
@@ -35,6 +43,7 @@ const handleErrors = (err) => {
                 errors[properties.path] = properties.message;
             });
     }
+
     return errors;
 }
 
@@ -47,7 +56,7 @@ module.exports.login_get = (req, res) => {
 }
 //sign up add user to db
 module.exports.signup_post = async (req, res) => {
-    try {
+    try { 
         const user = await User.save_new_user(req.body);
         const token = createToken(user.id, user.username ,user.role);
         res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });

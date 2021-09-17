@@ -128,6 +128,20 @@ function delete_airline_flights(id) {
         }
         return try_func(f);
 }
+function get_user_by_id(id) {
+
+        const f = async () => {
+                if (id <= 0 || id == null) {
+                        console.log('get_user_by_id function: id is invalid');
+                        return -1;
+                }
+                else {
+                        const result = await raw_repo.getRawResult(`select * from sp_get_user_by_id(${id})`);
+                        return result.rows;
+                }
+        }
+        return try_func(f);
+}
 module.exports = {
         delete_country_flights,
         delete_customers_user,
@@ -137,5 +151,6 @@ module.exports = {
         insert_country,
         update_country,
         insert_airline,
+        get_user_by_id,
         delete_airline_flights
 }

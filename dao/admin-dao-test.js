@@ -78,6 +78,26 @@ describe('test admin user dao functions:', () => {
         assert.strictEqual(airline[0].user_id.toString(), airline2.user_id.toString());
         assert.strictEqual(airline[0].name, airline2.name);
     });
+    it('get user by id', async function () {
+        var actual = await admin_dao.get_user_by_id(1);
+        assert.strictEqual(actual[0].id, '1');
+        assert.strictEqual(actual[0].username, user1.username);
+        assert.strictEqual(actual[0].password, user1.password);
+        assert.strictEqual(actual[0].email, user1.email);
+        assert.strictEqual(actual[0].role, user1.role);
+
+
+    });
+    it('get user by not existant id', async function () {
+        var actual = await admin_dao.get_user_by_id(1000000);
+        assert.strictEqual(actual[0], undefined);
+
+    });
+    it('get user by not valid id', async function () {
+        var actual = await admin_dao.get_user_by_id(0);
+        assert.strictEqual(actual, -1);
+
+    });
     it('insert airline bad name', async function () {
 
         var actual = await admin_dao.insert_airline(null, 1, 1);
@@ -192,7 +212,7 @@ describe('test admin user dao functions:', () => {
         assert.strictEqual(actual, 1);
         var customer = await customer_dao.get_customer_by_id(2);
         assert.strictEqual(customer[0], undefined);
-        var user = await customer_dao.get_user_by_id(2);
+        var user = await admin_dao.get_user_by_id(2);
         assert.strictEqual(user[0], undefined);
     });
     it('delete customer and user bad id ', async function () { 

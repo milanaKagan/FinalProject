@@ -1,4 +1,5 @@
 const anon_dao = require('../dao/anon-dao')
+const admin_dao = require('../dao/admin-dao')
 const customer_dao = require('../dao/customer-dao')
 module.exports.checkUsernameAvailability = async (username) => {
     if ((await customer_dao.get_user_by_username(username))[0]) {
@@ -14,7 +15,7 @@ module.exports.addUser = async (body) => {
     return await anon_dao.insert_user(body.username, body.password, body.email, body.role);
 }
 module.exports.getUserById = async (body) => {
-    return await customer_dao.get_user_by_id(body.id);
+    return await admin_dao.get_user_by_id(body.id);
 }
 module.exports.getUserByUsername = async (body) => {
     return await customer_dao.get_user_by_username(body.username);

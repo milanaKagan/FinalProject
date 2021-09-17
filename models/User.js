@@ -1,14 +1,26 @@
+var validator = require('validator');
 const login_service = require('../BL/login-service');
 const bcrypt = require('bcrypt');
 const { use } = require('chai');
 
+
 async function save_new_user(body) {
-    const passwordEncrypted = await encryptPassword(body.password);
-    body.password= passwordEncrypted;
-    var userId = await login_service.addUser(body);
-    console.log(`new user with id ${userId} was created & saved`);
-    var createdUser = await login_service.getUserById({id: userId});
-    return createdUser[0];
+    if(!validator.isEmail(body.email)){
+        throw Error('incorrect email format');
+       
+    }
+    if(body.password < 6)
+    {
+        throw Error('password less than 6 chars');
+    }
+    else{
+        const passwordEncrypted = await encryptPassword(body.password);
+        body.password= passwordEncrypted;
+        var userId = await login_service.addUser(body);
+        console.log(`new user with id ${userId} was created & saved`);
+        var createdUser = await login_service.getUserById({id: userId});
+        return createdUser[0];
+    }
 }
 
 async function encryptPassword(password) {

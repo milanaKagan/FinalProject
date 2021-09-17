@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const customer_dao = require('../dao/customer-dao');//get user by username
+const admin_dao = require('../dao/admin-dao');
 const requireAuthAdmin = (req, res, next) => {
     const token = req.cookies.jwt;
     // check json web token exists & is verified
@@ -80,7 +80,7 @@ const checkUser = (req, res, next) => {
                 res.locals.role = null;
                 next();
             } else {
-                let user = await customer_dao.get_user_by_id(decodedToken.id);
+                let user = await admin_dao.get_user_by_id(decodedToken.id);
                 if (user[0]) {
                     res.locals.role = user[0].role;
                     res.locals.user = user[0];

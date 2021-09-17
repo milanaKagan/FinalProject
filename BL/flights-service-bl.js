@@ -9,8 +9,11 @@ module.exports.getAllAirlineCompanies = async () => {
 module.exports.getAirlineById = async (body) => {
     return await anon_dao.get_airline_by_id(body.id);
 }
+module.exports.getUserById = async (body) => {
+    return await admin_dao.get_user_by_id(body.id);
+}
 module.exports.getAirlineByUsername = async (body) => {
-    return await airline_dao.get_airline_by_username(body.username);
+    return await admin_dao.get_airline_by_username(body.username);
 }
 module.exports.getAllCustomers = async () => {
     return await admin_dao.get_all_customers();

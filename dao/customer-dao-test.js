@@ -1,5 +1,7 @@
 const assert = require('assert'); // for the testing capabilites
 const customer_dao = require('./customer-dao');// our testing subject
+const admin_dao = require('./admin-dao');
+
 const connectedKnex = require('../db/knex-connector-test');
 describe('test customer user dao functions:', () => {
     beforeEach(async function () {
@@ -76,26 +78,6 @@ describe('test customer user dao functions:', () => {
         assert.strictEqual(actual, -1);
 
     });
-    it('get user by id', async function () {
-        var actual = await customer_dao.get_user_by_id(1);
-        assert.strictEqual(actual[0].id, '1');
-        assert.strictEqual(actual[0].username, user1.username);
-        assert.strictEqual(actual[0].password, user1.password);
-        assert.strictEqual(actual[0].email, user1.email);
-        assert.strictEqual(actual[0].role, user1.role);
-
-
-    });
-    it('get user by not existant id', async function () {
-        var actual = await customer_dao.get_user_by_id(1000000);
-        assert.strictEqual(actual[0], undefined);
-
-    });
-    it('get user by not valid id', async function () {
-        var actual = await customer_dao.get_user_by_id(0);
-        assert.strictEqual(actual, -1);
-
-    });
     it('get user by username', async function () {
         var actual = await customer_dao.get_user_by_username(user1.username);
         assert.strictEqual(actual[0].id, '1');
@@ -115,7 +97,7 @@ describe('test customer user dao functions:', () => {
     it('update user', async function () {
         var actual = await customer_dao.update_user(1,"user", "password", "email","role");
         assert.strictEqual(actual, '1');
-        var user =  await customer_dao.get_user_by_id(1);
+        var user =  await admin_dao.get_user_by_id(1);
         assert.strictEqual(user[0].id, '1');
         assert.strictEqual(user[0].username, "user");
         assert.strictEqual(user[0].password, "password");

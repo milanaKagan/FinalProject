@@ -77,20 +77,6 @@ function get_ticket_by_id(id) {
         }
         return try_func(f);
 }
-function get_user_by_id(id) {
-
-        const f = async () => {
-                if (id <= 0 || id == null) {
-                        console.log('get_user_by_id function: id is invalid');
-                        return -1;
-                }
-                else {
-                        const result = await raw_repo.getRawResult(`select * from sp_get_user_by_id(${id})`);
-                        return result.rows;
-                }
-        }
-        return try_func(f);
-}
 function get_user_by_username(username) {
 
         const f = async () => {
@@ -270,7 +256,6 @@ module.exports = {
         get_customer_by_id,
         get_customer_by_username,
         get_ticket_by_id,
-        get_user_by_id,
         get_user_by_username,
         insert_customer,
         update_customer,
