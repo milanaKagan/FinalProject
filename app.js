@@ -6,8 +6,17 @@ const airlineRoutes = require('./routes/airlineRoutes');
 const customerRoutes = require('./routes/customerRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuthAdmin,requireAuthCustomer, requireAuthAirline, checkUser } = require('./middleware/authMiddleware');
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
+
+const mongoose = require('mongoose');
+const dbURI = 'mongodb+srv://milana:milana89@cluster0.wiq3z.mongodb.net/node-auth';
 
 
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((result) => app.listen(3000))
+  .catch((err) => console.log(err));
+  
 const app = express();
 const port = 8080;
 
@@ -15,7 +24,11 @@ const port = 8080;
 app.use(express.static('public'));
 app.use(express.json());
 app.use(cookieParser());
-
+app.use(
+    '/api-docs',
+    swaggerUi.serve, 
+    swaggerUi.setup(swaggerDocument)
+  );
 
 // view engine
 app.set('view engine', 'ejs');

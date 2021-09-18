@@ -1,0 +1,45 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0", 
+      "title": "Flights Manager Project",
+      "description": "Full Stack Final Project",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      },
+      {
+        "paths": {
+          "/anonim/airlines": {
+            "get": {
+              "tags": ["Anonimus-User"],
+              "summary": "Get all airlines",
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "400": {
+                    "description": "Bad Request"
+                  }
+              }
+            }
+          }
+        
+      }
+    }
+    ],
+    
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"]
+    
+  }
+  
