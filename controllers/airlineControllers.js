@@ -1,12 +1,14 @@
 const bl = require("../BL/flights-service-bl")
-
+const trx = require("../models/Transaction")
 module.exports.updateAirline = async (req, res) => {
   try{
-    params = req.body;
-    //var trxId = await trx.trx_keeper(req.url,'updateAirline',params)
-    result = await bl.updateAirline(params);
-    //trx.trx_keeper_update(trxId,result)
-    await res.status(200).json({ result });
+    _params = req.body;
+    obj = { url: req.url, request: 'updateAirline', params: _params, result: null };
+    await trx.create(obj, function (err, res) {
+        if (err) throw err;
+    });
+    _result = await bl.updateAirline(_params);
+    await res.status(200).json({ _result });
   }
   catch(err){
     res.status(400).json({ err });
@@ -14,11 +16,13 @@ module.exports.updateAirline = async (req, res) => {
 }
 module.exports.addFlight = async (req, res) => {
   try{
-    params = req.body;
-    //var trxId = await trx.trx_keeper(req.url,'addFlight',params)
-    result = await bl.addFlight(params);
-    //trx.trx_keeper_update(trxId,result)
-    await res.status(201).json({ result });
+    _params = req.body;
+    obj = { url: req.url, request: 'addFlight', params: _params, result: null };
+    await trx.create(obj, function (err, res) {
+        if (err) throw err;
+    });
+    _result = await bl.addFlight(_params);
+    await res.status(201).json({ _result });
   }
   catch(err){
     res.status(400).json({ err });
@@ -26,11 +30,13 @@ module.exports.addFlight = async (req, res) => {
 }
 module.exports.updateFlight = async (req, res) => {
   try{
-    params = req.body;
-    //var trxId = await trx.trx_keeper(req.url,'updateFlight',params)
-    result = await bl.updateFlight(params);
-    //trx.trx_keeper_update(trxId,result)
-    await res.status(200).json({ result });
+    _params = req.body;
+    obj = { url: req.url, request: 'updateFlight', params: _params, result: null };
+    await trx.create(obj, function (err, res) {
+        if (err) throw err;
+    });
+    _result = await bl.updateFlight(_params);
+    await res.status(200).json({ _result });
   }
   catch(err){
     res.status(400).json({ err });
@@ -38,11 +44,13 @@ module.exports.updateFlight = async (req, res) => {
 }
 module.exports.removeFlight = async (req, res) => {
   try{
-    params =  {id :req.params.flight_id };
-    //var trxId = await trx.trx_keeper(req.url,'removeFlight',params)
-    result = await bl.removeFlight(params);
-    //trx.trx_keeper_update(trxId,result)
-    await res.status(204).json({ result });
+    _params =  {id :req.params.flight_id };
+    obj = { url: req.url, request: 'removeFlight', params: _params, result: null };
+    await trx.create(obj, function (err, res) {
+        if (err) throw err;
+    });
+    _result = await bl.removeFlight(_params);
+    await res.status(204).json({ _result });
   }
   catch(err){
     res.status(400).json({ err });

@@ -250,6 +250,7 @@ function update_user(id, username, password, email,role) {
         }
         return try_func(f);
 }
+
 module.exports = {
         get_tickets_by_customer,
         delete_ticket,

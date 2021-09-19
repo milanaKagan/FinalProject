@@ -21,20 +21,6 @@ function delete_customer(id) {
         }
         return try_func(f);
 }
-function delete_ticket(id) {
-
-        const f = async () => {
-                if (id <= 0 || id == null) {
-                        console.log('delete_tickets function: id is invalid');
-                        return -1;
-                }
-                else {
-                        const result = await raw_repo.getRawResult(`select * from sp_delete_ticket(${id})`);
-                        return result.rows[0].sp_delete_ticket;
-                }
-        }
-        return try_func(f);
-}
 function delete_flight_tickets(id) {
 
         const f = async () => {
@@ -166,7 +152,6 @@ function update_airline(id, name, countryId, userId) {
 }
 module.exports = {
         delete_customer,
-        delete_ticket,
         delete_flight_tickets,
         get_airline_by_username,
         insert_flight,

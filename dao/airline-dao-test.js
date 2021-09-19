@@ -70,26 +70,6 @@ describe('test airline user dao functions:', () => {
         var actual = await airline_dao.delete_customer(-1);
         assert.strictEqual(actual, -1);
     });
-    it('delete ticket', async function () {
-        ticket1 = {
-            flight_id: 1,
-            customer_id: 1
-        };
-        await connectedKnex.raw(`select * from sp_insert_ticket(${ticket1.flight_id},${ticket1.customer_id})`);
-        var actual = await airline_dao.delete_ticket(1);
-        assert.strictEqual(actual, '1');
-        var ticket = await customer_dao.get_ticket_by_id(1);
-        assert.strictEqual(ticket[0], undefined);
-
-    });
-    it('delete ticket not existent id', async function () {
-        var actual = await airline_dao.delete_ticket(1000);
-        assert.strictEqual(actual, '0');
-    });
-    it('delete ticket not valid id', async function () {
-        var actual = await airline_dao.delete_ticket(-1);
-        assert.strictEqual(actual, -1);
-    });
     it('delete flight and tickets', async function () {
         ticket1 = {
             flight_id: 1,

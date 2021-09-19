@@ -1,12 +1,16 @@
 const bl = require("../BL/flights-service-bl")
+const trx = require("../models/Transaction")
+
 
 module.exports.removeAirline = async (req, res) => {
     try {
-        params = { id: req.params.airline_id };
-        //var trxId = await trx.trx_keeper(req.url,'removeAirline',params)
-        result = await bl.removeAirline(params);
-        //trx.trx_keeper_update(trxId,result)
-        await res.status(204).json({ result });
+        _params = { id: req.params.airline_id };
+        obj = { url: req.url, request: 'removeAirline', params: _params, result: null };
+        await trx.create(obj, function (err, res) {
+            if (err) throw err;
+        });
+        _result = await bl.removeAirline(_params);
+        await res.status(204).json({ _result });
     }
     catch (err) {
         res.status(400).json({ err });
@@ -14,9 +18,7 @@ module.exports.removeAirline = async (req, res) => {
 }
 module.exports.getAllCustomers = async (req, res) => {
     try {
-        //var trxId = await trx.trx_keeper(req.url,'getAllCustomers',null)
         result = await bl.getAllCustomers();
-        //trx.trx_keeper_update(trxId,result)
         await res.status(200).json({ result });
     }
     catch (err) {
@@ -25,11 +27,13 @@ module.exports.getAllCustomers = async (req, res) => {
 }
 module.exports.removeCustomer = async (req, res) => {
     try {
-        params = { id: req.params.customer_id };
-        //var trxId = await trx.trx_keeper(req.url,'removeCustomer',params)
-        result = await bl.removeCustomer(params);
-        //trx.trx_keeper_update(trxId,result)
-        await res.status(204).json({ result });
+        _params = { id: req.params.customer_id };
+        obj = { url: req.url, request: 'removeCustomer', params: _params, result: null };
+        await trx.create(obj, function (err, res) {
+            if (err) throw err;
+        });
+        _result = await bl.removeCustomer(_params);
+        await res.status(204).json({ _result });
     }
     catch (err) {
         res.status(400).json({ err });
@@ -37,9 +41,7 @@ module.exports.removeCustomer = async (req, res) => {
 }
 module.exports.getAllUsers = async (req, res) => {
     try {
-        //var trxId = await trx.trx_keeper(req.url,'getAllUsers',null)
         result = await bl.getAllUsers();
-        //trx.trx_keeper_update(trxId,result)
         await res.status(200).json({ result });
     }
     catch (err) {
@@ -49,9 +51,7 @@ module.exports.getAllUsers = async (req, res) => {
 module.exports.getUserById = async (req, res) => {
     try {
         params = { id: req.params.user_id };
-        //var trxId = await trx.trx_keeper(req.url,'getUserById',params)
         result = await bl.getUserById(params);
-        //trx.trx_keeper_update(trxId,result)
         await res.status(200).json({ result });
     }
     catch (err) {

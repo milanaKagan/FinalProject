@@ -137,7 +137,7 @@ module.exports.updateTicket = async (body) => {
 }
 module.exports.removeTicket = async (body) => {
     if ((await customer_dao.get_ticket_by_id(body.id))[0]) {
-        return await airline_dao.delete_ticket(body.id);
+        return await customer_dao.delete_ticket(body.id);
     }
     console.log(`impossible to remove ticket with id ${body.id} because it is not exists`);
     return 0;

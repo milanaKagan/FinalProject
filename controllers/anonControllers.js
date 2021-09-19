@@ -2,9 +2,7 @@ const bl = require("../BL/flights-service-bl")
 
 module.exports.getAllAirlineCompanies = async (req, res) => {
   try{
-    //var trxId = await trx.trx_keeper(req.url,'getAllAirlineCompanies',null)
     result = await bl.getAllAirlineCompanies();
-    //trx.trx_keeper_update(trxId,result)
     await res.status(200).json({ result });
   }
   catch(err){
@@ -13,9 +11,7 @@ module.exports.getAllAirlineCompanies = async (req, res) => {
 }
 module.exports.getAllFlights = async (req, res) => {
     try{
-      //var trxId = await trx.trx_keeper(req.url,'getAllFlights',null)
       result = await bl.getAllFlights();
-      //trx.trx_keeper_update(trxId,result)
       await res.status(200).json({ result });
     }
     catch(err){
@@ -25,9 +21,7 @@ module.exports.getAllFlights = async (req, res) => {
 module.exports.getFlightById = async (req, res) => {
     try{
       params = {id :req.params.flight_id }
-      //var trxId = await trx.trx_keeper(req.url,'getFlightById',params)
       result = await bl.getFlightById(params);
-      //trx.trx_keeper_update(trxId,result)
       await res.status(200).json({ result });
     }
     catch(err){
@@ -37,9 +31,7 @@ module.exports.getFlightById = async (req, res) => {
   module.exports.getAirlineById = async (req, res) => {
     try{
       params = {id :req.params.airline_id }
-      //var trxId = await trx.trx_keeper(req.url,'getAirlineById',params)
       result = await bl.getAirlineById(params);
-      //trx.trx_keeper_update(trxId,result)
       await res.status(200).json({ result });
     }
     catch(err){
@@ -49,9 +41,7 @@ module.exports.getFlightById = async (req, res) => {
   module.exports.getFlightsByAirlineId = async (req, res) => {
     try{
       params = {id :req.params.airline_id }
-      //var trxId = await trx.trx_keeper(req.url,'getFlightsByAirlineId',params)
       result = await bl.getFlightsByAirlineId(params);
-      //trx.trx_keeper_update(trxId,result)
       await res.status(200).json({ result });
     }
     catch(err){
@@ -61,9 +51,7 @@ module.exports.getFlightById = async (req, res) => {
   module.exports.getArrivalFlights = async (req, res) => {
     try{
       params = {id :req.params.country_id }
-      //var trxId = await trx.trx_keeper(req.url,'getArrivalFlights',params)
       result = await bl.getArrivalFlights(params);
-      //trx.trx_keeper_update(trxId,result)
       await res.status(200).json({ result });
     }
     catch(err){
@@ -73,9 +61,7 @@ module.exports.getFlightById = async (req, res) => {
   module.exports.getDepartureFlights = async (req, res) => {
     try{
       params = {id :req.params.country_id }
-      //var trxId = await trx.trx_keeper(req.url,'getDepartureFlights',params)
       result = await bl.getDepartureFlights(params);
-      //trx.trx_keeper_update(trxId,result)
       await res.status(200).json({ result });
     }
     catch(err){
@@ -84,9 +70,7 @@ module.exports.getFlightById = async (req, res) => {
   }
   module.exports.getAllCountries = async (req, res) => {
     try{
-      //var trxId = await trx.trx_keeper(req.url,'getAllCountries',null)
       result = await bl.getAllCountries();
-      //trx.trx_keeper_update(trxId,result)
       await res.status(200).json({ result });
     }
     catch(err){
@@ -96,9 +80,7 @@ module.exports.getFlightById = async (req, res) => {
   module.exports.getFlightsByParameters = async (req, res) => {
     try{
       param = req.body;
-      //var trxId = await trx.trx_keeper(req.url,'getFlightsByParameters',param)
       result = await bl.getFlightsByParameters(param);
-      //trx.trx_keeper_update(trxId,result)
       await res.status(200).json({ result });
     }
     catch(err){
