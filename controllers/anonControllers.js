@@ -88,7 +88,6 @@ module.exports.getAllCountries = async (req, res) => {
 module.exports.getFlightsByParameters = async (req, res) => {
   try {
     param.origin_country_id = Int.preq.query.origin_country_id;
-    console.log(param)
     await bl.getFlightsByParameters(param).then((result)=>{
       res.status(result.length == 0 ? 404 : 200).json({ result });
     })  

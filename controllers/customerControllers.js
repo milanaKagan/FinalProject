@@ -8,9 +8,10 @@ module.exports.addCustomer = async (req, res) => {
             if (err) throw err;
 
         });
-        _result = await bl.addCustomer(_params);
+        await bl.addCustomer(_params).then((_result)=>{
+            res.status(_result == -1 || _result == 0 ? 400 : 201).json({ _result });
 
-        await res.status(201).json({ _result });
+        });
     }
     catch (err) {
         res.status(400).json({ err });
@@ -19,8 +20,9 @@ module.exports.addCustomer = async (req, res) => {
 module.exports.getCustomerById = async (req, res) => {
     try {
         params = { id: req.params.customer_id };
-        result = await bl.getCustomerById(params);
-        await res.status(200).json({ result });
+        await bl.getCustomerById(params).then((result) => {
+            res.status(result.length == 0 ? 404 : 200).json({ result });
+        })
     }
     catch (err) {
         res.status(400).json({ err });
@@ -29,8 +31,9 @@ module.exports.getCustomerById = async (req, res) => {
 module.exports.getTicketsByCustomer = async (req, res) => {
     try {
         params = { id: req.params.customer_id };
-        result = await bl.getTicketsByCustomer(params);
-        await res.status(200).json({ result });
+        await bl.getTicketsByCustomer(params).then((result) => {
+            res.status(_result == -1 || _result == 0 ? 404 : 200).json({ result });
+        })
     }
     catch (err) {
         res.status(400).json({ err });
@@ -44,8 +47,9 @@ module.exports.addTicket = async (req, res) => {
             if (err) throw err;
 
         });
-        _result = await bl.addTicket(_params);
-        await res.status(201).json({ _result });
+        await bl.addTicket(_params).then((_result) => {
+            res.status(_result == -1 || _result == 0 ? 400 : 201).json({ _result });
+        });
     }
     catch (err) {
         res.status(400).json({ err });
@@ -59,8 +63,9 @@ module.exports.updateCustomer = async (req, res) => {
             if (err) throw err;
 
         });
-        _result= await bl.updateCustomer(_params);
-        await res.status(201).json({ _result });
+        await bl.updateCustomer(_params).then((result) => {
+            res.status(result == 0 ? 404 : 200).json({ result });
+        })
     }
     catch (err) {
         res.status(400).json({ err });
@@ -73,7 +78,7 @@ module.exports.removeTicket = async (req, res) => {
         await trx.create(obj, function (err, res) {
             if (err) throw err;
         });
-        _result= await bl.removeTicket(_params);
+        _result = await bl.removeTicket(_params);
         await res.status(204).json({ _result });
     }
     catch (err) {

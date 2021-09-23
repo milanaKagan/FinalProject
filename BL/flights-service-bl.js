@@ -19,7 +19,6 @@ module.exports.getAllCustomers = async () => {
     return await admin_dao.get_all_customers();
 }
 module.exports.getCustomerById = async (body) => {
-    console.log(body.id)
     return await customer_dao.get_customer_by_id(body.id);
 }
 module.exports.getCustomerByUsername = async (body) => {
