@@ -49,6 +49,9 @@ const router = Router();
 *            id:
 *               type: integer
 *               description: The auto-generated id of the  flight.
+*            airline_id:
+*               type: integer
+*               description: The auto-generated id of the  flight.
 *            origin_country_id:
 *               type: integer
 *               description: origin country id of the flight.

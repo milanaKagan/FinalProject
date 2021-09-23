@@ -51,8 +51,9 @@ module.exports.getAllUsers = async (req, res) => {
 module.exports.getUserById = async (req, res) => {
     try {
         params = { id: req.params.user_id };
-        result = await bl.getUserById(params);
-        await res.status(200).json({ result });
+        await bl.getUserById(params).then((result)=>{
+            res.status(result.length == 0 ? 404 : 200).json({ result });
+          })  
     }
     catch (err) {
         res.status(400).json({ err });
