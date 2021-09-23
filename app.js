@@ -4,6 +4,8 @@ const anonRoutes = require('./routes/anonRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const airlineRoutes = require('./routes/airlineRoutes');
 const customerRoutes = require('./routes/customerRoutes');
+const logger_repo = require('./logger')
+
 const cookieParser = require('cookie-parser');
 const cors = require('cors')
 const { requireAuthAdmin, requireAuthCustomer, requireAuthAirline, checkUser } = require('./middleware/authMiddleware');

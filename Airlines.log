@@ -1,0 +1,110 @@
+{
+  level: 'info',
+  message: 'airline with id 2 was inserted',
+  timestamp: '2021-09-23T20:53:46.206Z'
+}
+{
+  level: 'info',
+  message: 'get user by id 1 request}',
+  timestamp: '2021-09-23T20:53:46.251Z'
+}
+{
+  level: 'info',
+  message: 'get user by id 1000000 request}',
+  timestamp: '2021-09-23T20:53:46.290Z'
+}
+{
+  level: 'error',
+  message: 'get_user_by_id function: id is invalid',
+  timestamp: '2021-09-23T20:53:46.324Z'
+}
+{
+  level: 'error',
+  message: 'insert_airline function: name is null or empty',
+  timestamp: '2021-09-23T20:53:46.357Z'
+}
+{
+  level: 'error',
+  message: 'insert_airline function: countryId is invalid',
+  timestamp: '2021-09-23T20:53:46.392Z'
+}
+{
+  level: 'error',
+  message: 'insert_airline function: userId is invalid',
+  timestamp: '2021-09-23T20:53:46.427Z'
+}
+{
+  level: 'info',
+  message: 'airline with id 1 was deleted',
+  timestamp: '2021-09-23T20:53:46.463Z'
+}
+{
+  level: 'info',
+  message: 'airline with id 1000 was deleted',
+  timestamp: '2021-09-23T20:53:46.498Z'
+}
+{
+  level: 'error',
+  message: 'delete_airline_flights function: id is invalid',
+  timestamp: '2021-09-23T20:53:46.532Z'
+}
+{
+  level: 'info',
+  message: 'get all users request [object Object]',
+  timestamp: '2021-09-23T20:53:46.565Z'
+}
+{
+  level: 'info',
+  message: 'get all tickets request',
+  timestamp: '2021-09-23T20:53:46.600Z'
+}
+{
+  level: 'info',
+  message: 'get all users request',
+  timestamp: '2021-09-23T20:53:46.635Z'
+}
+{
+  level: 'info',
+  message: 'insert country 2',
+  timestamp: '2021-09-23T20:53:46.668Z'
+}
+{
+  level: 'error',
+  message: 'insert_country function: name is null or empty',
+  timestamp: '2021-09-23T20:53:46.703Z'
+}
+{
+  level: 'info',
+  message: 'country with id 1 was updated : 1',
+  timestamp: '2021-09-23T20:53:46.737Z'
+}
+{
+  level: 'error',
+  message: 'update_country function: name is null or empty',
+  timestamp: '2021-09-23T20:53:46.780Z'
+}
+{
+  level: 'info',
+  message: 'customer with 2 was deleted : 1',
+  timestamp: '2021-09-23T20:53:46.819Z'
+}
+{
+  level: 'info',
+  message: 'get user by id 2 request}',
+  timestamp: '2021-09-23T20:53:46.822Z'
+}
+{
+  level: 'error',
+  message: 'delete_customers_user function: id is invalid',
+  timestamp: '2021-09-23T20:53:46.856Z'
+}
+{
+  level: 'error',
+  message: 'delete_country_flights function: id is invalid',
+  timestamp: '2021-09-23T20:53:46.890Z'
+}
+{
+  level: 'info',
+  message: 'get user by id 1 request}',
+  timestamp: '2021-09-23T20:53:49.226Z'
+}
