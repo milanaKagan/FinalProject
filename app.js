@@ -35,7 +35,12 @@ const dbURI = 'mongodb+srv://milana:milana89@cluster0.wiq3z.mongodb.net/node-aut
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => app.listen(3000))
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    logger_repo.log({
+      level: 'error',
+      message: `main-server: Error during connection to mongo db ` + err
+    });
+  })
 
 const app = express();
 const port = 8080;
@@ -71,6 +76,11 @@ app.use(adminRoutes);
 app.use(airlineRoutes);
 app.use(customerRoutes);
 
-app.listen(port, () => console.log(`Listening to port ${port}`));
+app.listen(port, () => {
+  logger_repo.log({
+    level: 'info',
+    message: `main-server: Listening to port ${port}`
+  });
+})
 
 

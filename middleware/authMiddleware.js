@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 const admin_dao = require('../dao/admin-dao');
+const logger_repo = require('../logger')
+
 
 const requireAuthAdmin = (req, res, next) => {
     const token = req.cookies.jwt;
@@ -7,16 +9,25 @@ const requireAuthAdmin = (req, res, next) => {
     if (token) {
         jwt.verify(token, 'secret key', (err, decodedToken) => {
             if (err) {
-                console.log(err.message);
+                logger_repo.log({
+                    level: 'error',
+                    message: 'authMiddleware: jwt token verify failed ' + err.message
+                });
+
                 res.redirect('/login');
             }
             else {
-                if (decodedToken.role.toLowerCase()  == 'admin') {
+                if (decodedToken.role.toLowerCase() == 'admin') {
                     next();
                 }
-                else{
-                    console.log('no permissions enter to this page');
-                    res.redirect('/');                }
+                else {
+                    logger_repo.log({
+                        level: 'error',
+                        message: 'authMiddleware: No permissions enter to this page'
+                    });
+
+                    res.redirect('/');
+                }
 
             }
         });
@@ -30,16 +41,23 @@ const requireAuthCustomer = (req, res, next) => {
     if (token) {
         jwt.verify(token, 'secret key', (err, decodedToken) => {
             if (err) {
-                console.log(err.message);
+                logger_repo.log({
+                    level: 'error',
+                    message: 'authMiddleware: jwt token verify failed ' + err.message
+                });
                 res.redirect('/login');
             }
             else {
-                if (decodedToken.role.toLowerCase()  == 'customer') {
+                if (decodedToken.role.toLowerCase() == 'customer') {
                     next();
                 }
-                else{
-                    console.log('no permissions enter to this page');
-                    res.redirect('/');                }
+                else {
+                    logger_repo.log({
+                        level: 'error',
+                        message: 'authMiddleware: No permissions enter to this page'
+                    });                    
+                    res.redirect('/');
+                }
 
             }
         });
@@ -53,15 +71,21 @@ const requireAuthAirline = (req, res, next) => {
     if (token) {
         jwt.verify(token, 'secret key', (err, decodedToken) => {
             if (err) {
-                console.log(err.message);
+                logger_repo.log({
+                    level: 'error',
+                    message: 'authMiddleware: jwt token verify failed ' + err.message
+                });
                 res.redirect('/login');
             }
             else {
-                if (decodedToken.role.toLowerCase()  == 'airline') {
+                if (decodedToken.role.toLowerCase() == 'airline') {
                     next();
                 }
-                else{
-                    console.log('no permissions enter to this page');
+                else {
+                    logger_repo.log({
+                        level: 'error',
+                        message: 'authMiddleware: No permissions enter to this page'
+                    });
                     res.redirect('/');
                 }
 
@@ -101,4 +125,4 @@ const checkUser = (req, res, next) => {
     }
 };
 
-module.exports = { requireAuthAdmin,requireAuthCustomer, requireAuthAirline, checkUser };
+module.exports = { requireAuthAdmin, requireAuthCustomer, requireAuthAirline, checkUser };

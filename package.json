@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "isTest": true,
+  "isTest": false,
   "scripts": {
     "start": "node app.js",
     "test": "mocha \"**/*-dao-test.js\""

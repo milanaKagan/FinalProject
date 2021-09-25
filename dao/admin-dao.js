@@ -10,7 +10,6 @@ function try_func(f) {
         }
 }
 function delete_country_flights(id) {
-
         const f = async () => {
                 if (id <= 0 || id == null) {
                         logger_repo.log({

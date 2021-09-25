@@ -2,6 +2,8 @@ var validator = require('validator');
 const login_service = require('../BL/login-service');
 const bcrypt = require('bcrypt');
 const { use } = require('chai');
+const logger_repo = require('../logger')
+
 
 
 async function save_new_user(body) {
@@ -17,7 +19,10 @@ async function save_new_user(body) {
         const passwordEncrypted = await encryptPassword(body.password);
         body.password= passwordEncrypted;
         var userId = await login_service.addUser(body);
-        console.log(`new user with id ${userId} was created & saved`);
+        logger_repo.log({
+            level: 'info',
+            message: `User-model: new user with id ${userId} was created & saved`
+        });
         var createdUser = await login_service.getUserById({id: userId});
         return createdUser[0];
     }
