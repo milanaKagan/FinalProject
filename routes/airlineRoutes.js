@@ -1,7 +1,9 @@
 const { Router } = require('express');
 const airlineController = require('../controllers/airlineControllers');
+const auth = require('../middleware/authMiddleware')
 
 const router = Router();
+
 /**
 *  @swagger
 *  tags:
@@ -28,7 +30,7 @@ const router = Router();
 *         "400":
 *           description: Bad Request.
 */
-router.put('/airline/airlines', airlineController.updateAirline);
+router.put('/airline/airlines',auth.requireAuthAirline, airlineController.updateAirline);
 /**
 *  @swagger
 *   /airline/flights:
@@ -47,7 +49,7 @@ router.put('/airline/airlines', airlineController.updateAirline);
 *         "400":
 *           description: Bad Request.
 */
-router.post('/airline/flights', airlineController.addFlight);
+router.post('/airline/flights',auth.requireAuthAirline, airlineController.addFlight);
 /**
 *  @swagger
 *   /airline/flights:
@@ -66,7 +68,7 @@ router.post('/airline/flights', airlineController.addFlight);
 *         "400":
 *           description: Bad Request.
 */
-router.put('/airline/flights', airlineController.updateFlight);
+router.put('/airline/flights',auth.requireAuthAirline, airlineController.updateFlight);
 /**
 *  @swagger
 *	/airline/flights/{id}:
@@ -84,5 +86,5 @@ router.put('/airline/flights', airlineController.updateFlight);
 *         "204":
 *           description: Delete was successful.
 */
-router.delete('/airline/flights/:flight_id', airlineController.removeFlight);
+router.delete('/airline/flights/:flight_id', auth.requireAuthAirline, airlineController.removeFlight);
 module.exports = router;

@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const adminController = require('../controllers/adminControllers');
+const auth = require('../middleware/authMiddleware')
 const mongoDbController = require('../controllers/mongoDbController');
 /**
 * @swagger
@@ -53,6 +54,7 @@ const mongoDbController = require('../controllers/mongoDbController');
 *    description: Admin user functionality.
 */
 const router = Router();
+
 /**
 *  @swagger
 *	/admin/airlines/{id}:
@@ -70,7 +72,7 @@ const router = Router();
 *         "204":
 *           description: Delete was successful.
 */
-router.delete('/admin/airlines/:airline_id', adminController.removeAirline);
+router.delete('/admin/airlines/:airline_id',  auth.requireAuthAdmin, adminController.removeAirline);
 /**
 *  @swagger
 *	/admin/customers:
@@ -87,7 +89,7 @@ router.delete('/admin/airlines/:airline_id', adminController.removeAirline);
 *         "400":
 *           description: Bad Request.
 */
-router.get('/admin/customers', adminController.getAllCustomers);
+router.get('/admin/customers',  auth.requireAuthAdmin, adminController.getAllCustomers);
 /**
 *  @swagger
 *	/admin/users:
@@ -104,7 +106,7 @@ router.get('/admin/customers', adminController.getAllCustomers);
 *         "400":
 *           description: Bad Request.
 */
-router.get('/admin/users', adminController.getAllUsers);
+router.get('/admin/users', auth.requireAuthAdmin, adminController.getAllUsers);
 /**
 *  @swagger
 *   /admin/users/{id}:
@@ -130,7 +132,7 @@ router.get('/admin/users', adminController.getAllUsers);
 *         "400":
 *           description: Bad Request.
 */
-router.get('/admin/customers/:user_id', adminController.getUserById);
+router.get('/admin/customers/:user_id',  auth.requireAuthAdmin, adminController.getUserById);
 /**
 *  @swagger
 *	/admin/customers/{id}:
@@ -148,7 +150,7 @@ router.get('/admin/customers/:user_id', adminController.getUserById);
 *         "204":
 *           description: Delete was successful.
 */
-router.delete('/admin/customers/:customer_id', adminController.removeCustomer);
+router.delete('/admin/customers/:customer_id',  auth.requireAuthAdmin, adminController.removeCustomer);
 /**
 *  @swagger
 *	/admin/transactions:
@@ -165,6 +167,6 @@ router.delete('/admin/customers/:customer_id', adminController.removeCustomer);
 *         "400":
 *           description: Bad Request.
 */
-router.get('/admin/transactions', mongoDbController.getAllTransactions);
+router.get('/admin/transactions',  auth.requireAuthAdmin, mongoDbController.getAllTransactions);
 
 module.exports = router;
