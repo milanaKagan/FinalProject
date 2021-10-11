@@ -72,7 +72,7 @@ const router = Router();
 *         "204":
 *           description: Delete was successful.
 */
-router.delete('/admin/airlines/:airline_id',  auth.requireAuthAdmin, adminController.removeAirline);
+router.delete('/admin/airlines/:airline_id', adminController.removeAirline);
 /**
 *  @swagger
 *	/admin/customers:
@@ -150,7 +150,27 @@ router.get('/admin/customers/:user_id',  auth.requireAuthAdmin, adminController.
 *         "204":
 *           description: Delete was successful.
 */
-router.delete('/admin/customers/:customer_id',  auth.requireAuthAdmin, adminController.removeCustomer);
+router.delete('/admin/customers/:customer_id', adminController.removeCustomer);
+/**
+*  @swagger
+*   /admin/airlines:
+*     post:
+*       summary: Post an Airline
+*       tags: [AdminUser]
+*       requestBody: 
+*           required: true 
+*           content: 
+*               application/json: 
+*                   schema: 
+*                       $ref: '#/components/schemas/Airline'
+*       responses:
+*         "200":
+*           description: Airline added.
+*         "400":
+*           description: Bad Request.
+*/
+router.post('/admin/airlines', adminController.addAirline);
+
 /**
 *  @swagger
 *	/admin/transactions:

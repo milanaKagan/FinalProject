@@ -8803,3 +8803,413 @@
   message: 'anon-dao: get all flights ',
   timestamp: '2021-10-01T08:47:37.506Z'
 }
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-01T08:50:11.905Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get all airlines ',
+  timestamp: '2021-10-01T09:13:02.195Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get all airlines ',
+  timestamp: '2021-10-01T09:13:25.657Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get all airlines ',
+  timestamp: '2021-10-01T09:15:53.003Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get all flights ',
+  timestamp: '2021-10-01T09:20:11.643Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get all airlines ',
+  timestamp: '2021-10-01T09:23:35.007Z'
+}
+{
+  level: 'error',
+  message: 'customer-dao: get_user_by_username function: username is null or empty',
+  timestamp: '2021-10-01T09:31:22.461Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:34:47.940Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username CustomerUser request',
+  timestamp: '2021-10-11T05:35:56.306Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username CustomerUser request',
+  timestamp: '2021-10-11T05:36:08.304Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username CustomerUser request',
+  timestamp: '2021-10-11T05:36:08.927Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username Customer1 request',
+  timestamp: '2021-10-11T05:36:26.534Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username Customer1 request',
+  timestamp: '2021-10-11T05:36:28.894Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username Customer1 request',
+  timestamp: '2021-10-11T05:36:29.485Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username Customer1 request',
+  timestamp: '2021-10-11T05:36:34.958Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username Customer1 request',
+  timestamp: '2021-10-11T05:36:40.775Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:36:40.883Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:36:40.886Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:36:52.242Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:36:55.738Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:36:55.742Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:37:00.553Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:37:04.499Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:37:04.502Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:37:09.162Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get all airlines ',
+  timestamp: '2021-10-11T05:37:09.169Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:37:21.436Z'
+}
+{
+  level: 'error',
+  message: 'authMiddleware: No permissions enter to this page',
+  timestamp: '2021-10-11T05:37:21.440Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:37:21.473Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:37:21.476Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:47:03.471Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:48:49.473Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:49:33.015Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:51:30.130Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:52:20.359Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:53:08.691Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:54:19.760Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:54:19.766Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:54:24.858Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:55:16.117Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:55:25.789Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:55:25.934Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T05:55:27.145Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:56:57.296Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:57:24.507Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T05:58:56.161Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T06:00:17.692Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T06:00:23.148Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T06:00:42.945Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get customer by id 10 request',
+  timestamp: '2021-10-11T06:00:42.952Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T06:00:46.241Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T06:06:15.116Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T06:07:02.817Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get ticket by id 10 request',
+  timestamp: '2021-10-11T06:07:07.548Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: ticket with id 10 deleted, result: 1',
+  timestamp: '2021-10-11T06:07:07.554Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T06:18:37.580Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get all airlines ',
+  timestamp: '2021-10-11T06:19:08.375Z'
+}
+{
+  level: 'error',
+  message: 'customer-dao: insert_customer function: firstName is null or empty',
+  timestamp: '2021-10-11T06:19:51.494Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T06:20:17.097Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T06:20:23.711Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T06:20:26.907Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T06:20:29.525Z'
+}
+{
+  level: 'info',
+  message: 'customer-dao: get user by username AdminUser1 request',
+  timestamp: '2021-10-11T06:20:41.913Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 12 request',
+  timestamp: '2021-10-11T06:20:44.620Z'
+}
+{
+  level: 'error',
+  message: 'anon-dao: insert user id 11',
+  timestamp: '2021-10-11T06:21:00.202Z'
+}
+{
+  level: 'info',
+  message: 'User-model: new user with id 11 was created & saved',
+  timestamp: '2021-10-11T06:21:00.204Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 11 request',
+  timestamp: '2021-10-11T06:21:00.207Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 11 request',
+  timestamp: '2021-10-11T06:21:00.225Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: get user by id 11 request',
+  timestamp: '2021-10-11T06:21:00.228Z'
+}
+{
+  level: 'error',
+  message: 'customer-dao: insert_customer function: firstName is null or empty',
+  timestamp: '2021-10-11T06:21:12.026Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T06:21:45.512Z'
+}
+{
+  level: 'error',
+  message: 'customer-dao: insert_customer function: firstName is null or empty',
+  timestamp: '2021-10-11T06:21:46.853Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T06:22:18.438Z'
+}
+{
+  level: 'error',
+  message: 'customer-dao: insert_customer function: firstName is null or empty',
+  timestamp: '2021-10-11T06:22:24.428Z'
+}
+{
+  level: 'info',
+  message: 'main-server: Listening to port 8080',
+  timestamp: '2021-10-11T06:22:58.364Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get flights by airline id 10 request',
+  timestamp: '2021-10-11T06:24:04.987Z'
+}
+{
+  level: 'info',
+  message: 'anon-dao: get airline by id 10 ',
+  timestamp: '2021-10-11T06:24:04.991Z'
+}
+{
+  level: 'info',
+  message: 'airline-dao: flight with 18 was deleted, result: 1',
+  timestamp: '2021-10-11T06:24:04.999Z'
+}
+{
+  level: 'info',
+  message: 'airline-dao: flight with 19 was deleted, result: 1',
+  timestamp: '2021-10-11T06:24:05.002Z'
+}
+{
+  level: 'info',
+  message: 'airline-dao: flight with 20 was deleted, result: 1',
+  timestamp: '2021-10-11T06:24:05.006Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: airline with id 10 was deleted',
+  timestamp: '2021-10-11T06:24:05.010Z'
+}
+{
+  level: 'info',
+  message: 'admin-dao: airline with id 13 was inserted',
+  timestamp: '2021-10-11T06:24:39.564Z'
+}

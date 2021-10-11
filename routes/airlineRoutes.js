@@ -30,7 +30,7 @@ const router = Router();
 *         "400":
 *           description: Bad Request.
 */
-router.put('/airline/airlines',auth.requireAuthAirline, airlineController.updateAirline);
+router.put('/airline/airlines', airlineController.updateAirline);
 /**
 *  @swagger
 *   /airline/flights:
@@ -49,7 +49,7 @@ router.put('/airline/airlines',auth.requireAuthAirline, airlineController.update
 *         "400":
 *           description: Bad Request.
 */
-router.post('/airline/flights',auth.requireAuthAirline, airlineController.addFlight);
+router.post('/airline/flights', airlineController.addFlight);
 /**
 *  @swagger
 *   /airline/flights:
@@ -68,7 +68,7 @@ router.post('/airline/flights',auth.requireAuthAirline, airlineController.addFli
 *         "400":
 *           description: Bad Request.
 */
-router.put('/airline/flights',auth.requireAuthAirline, airlineController.updateFlight);
+router.put('/airline/flights', airlineController.updateFlight);
 /**
 *  @swagger
 *	/airline/flights/{id}:
@@ -86,5 +86,5 @@ router.put('/airline/flights',auth.requireAuthAirline, airlineController.updateF
 *         "204":
 *           description: Delete was successful.
 */
-router.delete('/airline/flights/:flight_id', auth.requireAuthAirline, airlineController.removeFlight);
+router.delete('/airline/flights/:flight_id', airlineController.removeFlight);
 module.exports = router;

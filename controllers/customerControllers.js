@@ -6,7 +6,6 @@ module.exports.addCustomer = async (req, res) => {
         obj = { url: req.url, request: 'addCustomer', params: _params, result: null };
         await trx.create(obj, function (err, res) {
             if (err) throw err;
-
         });
         await bl.addCustomer(_params).then((_result)=>{
             res.status(_result == -1 || _result == 0 ? 400 : 201).json({ _result });

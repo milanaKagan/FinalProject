@@ -110,7 +110,7 @@ router.get('/customer/customers/:customer_id', auth.requireAuthCustomer,customer
 *         "400":
 *           description: Bad Request.
 */
-router.put('/customer/customers', auth.requireAuthCustomer,customerController.updateCustomer);
+router.put('/customer/customers', customerController.updateCustomer);
 /**
 *  @swagger
 *   /customer/tickets/{id}:
@@ -156,7 +156,7 @@ router.get('/customer/tickets/:customer_id',auth.requireAuthCustomer, customerCo
 *           description: Bad Request.
 */
 
-router.post('/customer/tickets', auth.requireAuthCustomer,customerController.addTicket);
+router.post('/customer/tickets',customerController.addTicket);
 /**
 *  @swagger
 *	/customer/tickets/{id}:
@@ -174,7 +174,7 @@ router.post('/customer/tickets', auth.requireAuthCustomer,customerController.add
 *         "204":
 *           description: Delete was successful.
 */
-router.delete('/customer/tickets/:ticket_id',auth.requireAuthCustomer, customerController.removeTicket);
+router.delete('/customer/tickets/:ticket_id', customerController.removeTicket);
 /**
 *  @swagger
 *   /customer/customers:
@@ -193,6 +193,6 @@ router.delete('/customer/tickets/:ticket_id',auth.requireAuthCustomer, customerC
 *         "400":
 *           description: Bad Request.
 */
-router.post('/customer/customers', auth.requireAuthCustomer,customerController.addCustomer);
+router.post('/customer/customers', customerController.addCustomer);
 
 module.exports = router;

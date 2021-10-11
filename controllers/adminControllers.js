@@ -39,6 +39,22 @@ module.exports.removeCustomer = async (req, res) => {
         res.status(400).json({ err });
     }
 }
+module.exports.addAirline = async (req, res) => {
+    try {
+        _params = req.body;
+        obj = { url: req.url, request: 'addAirline', params: _params, result: null };
+        await trx.create(obj, function (err, res) {
+            if (err) throw err;
+        });
+        await bl.addAirline(_params).then((_result)=>{
+            res.status(_result == -1 || _result == 0 ? 400 : 201).json({ _result });
+
+        });
+    }
+    catch (err) {
+        res.status(400).json({ err });
+    }
+}
 module.exports.getAllUsers = async (req, res) => {
     try {
         result = await bl.getAllUsers();
