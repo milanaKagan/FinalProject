@@ -51,6 +51,7 @@ app.options('*', cors());
 app.use(express.static('public'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 const specs = swaggerJsdoc(options);
 app.use(
   "/api-docs",
