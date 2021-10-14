@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/milanaKagan/FinalProjectBackend#readme",
   "dependencies": {
+    "@syncfusion/ej2-react-calendars": "^19.3.44",
     "bcrypt": "^5.0.1",
     "chai": "^4.3.4",
     "cookie-parser": "^1.4.5",
