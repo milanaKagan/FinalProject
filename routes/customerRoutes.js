@@ -62,6 +62,32 @@ const router = Router();
 */
 /**
 *  @swagger
+*   /customer/customers/user/{username}:
+*     get:
+*       summary: Gets a customer by id
+*       tags: [CustomerUser]
+*       parameters:
+*         - in: path
+*           name: username
+*           schema:
+*             type: string
+*           required: true
+*           description: The customer username
+*       responses:
+*         "200":
+*           description: customer by username.
+*           content:
+*             application/json:
+*               schema:
+*                 $ref: '#/components/schemas/Customer'
+*         "404":
+*           description: Customer not found.
+*         "400":
+*           description: Bad Request.
+*/
+router.get('/customer/customers/user/:username', auth.requireAuthCustomer,customerController.getCustomerByUserName);
+/**
+*  @swagger
 *   /customer/customers/{id}:
 *     get:
 *       summary: Gets a customer by id

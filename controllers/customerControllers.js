@@ -1,3 +1,4 @@
+const { Console } = require("console");
 const bl = require("../BL/flights-service-bl")
 const trx = require("../models/Transaction")
 module.exports.addCustomer = async (req, res) => {
@@ -21,6 +22,19 @@ module.exports.getCustomerById = async (req, res) => {
         params = { id: req.params.customer_id };
         await bl.getCustomerById(params).then((result) => {
             res.status(result.length == 0 ? 404 : 200).json({ result });
+        })
+    }
+    catch (err) {
+        res.status(400).json({ err });
+    }
+}
+module.exports.getCustomerByUserName = async (req, res) => {
+    try {
+        params = { username: req.params.username };
+        await bl.getCustomerByUsername(params).then((result) => {
+            console.log(result)
+            res.status(result.length == 0 ? 404 : 200).json({ result });
+       
         })
     }
     catch (err) {

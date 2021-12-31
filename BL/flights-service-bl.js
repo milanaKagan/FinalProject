@@ -22,7 +22,7 @@ module.exports.getCustomerById = async (body) => {
     return await customer_dao.get_customer_by_id(body.id);
 }
 module.exports.getCustomerByUsername = async (body) => {
-    return await customer_dao.get_customer_by_id(body.username);
+    return await customer_dao.get_customer_by_username(body.username);
 }
 module.exports.getAllUsers = async () => {
     return await admin_dao.get_all_users();

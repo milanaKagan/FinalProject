@@ -11,7 +11,7 @@ const createToken = (userId, userName, userRole) => {
 
 // handle errors
 const handleErrors = (err) => {
-    let errors = {};
+    let errors = {username: "", password: "", email: ""};
     // incorrect username
     if (err.message === 'incorrect username') {
         errors ={ username : 'That username is not registered'}    }
